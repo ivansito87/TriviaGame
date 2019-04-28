@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
 
-<head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Ivan Rendon" />
+        <title>Ivan's Trivia</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:500" rel="stylesheet">
+        <link href="assets/images/my_ir_favicon.png" rel="icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<!--======================= Body =======================-->
 
-    <meta charset="UTF-8">
-    <title>Trivia Game</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:500" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-
-</head>
-
-<body>
     <body>
         <div class="contianer">
             <div class="header">
-                <h1 class="header_logo">Resizing Fixed Header</h1>
+                <h1 class="header_logo">Hello! <span id="user"></span> Welcome to my Trivia </h1>
             </div>
             <div class="offset">
             </div>
             <div class="header">
                 <div class="row">
                     <div class="col-10">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis earum non distinctio dolores, atque sapiente. Laudantium, est! Reprehenderit, veritatis. Error impedit aspernatur expedita earum perferendis quidem assumenda, deserunt quos ad!</p>
+                        <p>Welcome to my trivia, the rules are simple, you have <strong>5 seconds</strong> to answer each question. Every time you answer a question the time
+                            will reset for the next question. At the end the results will show on the screen and you will have the option to restart the game 
+                             Good Luck!.. </p>
                     </div>
                     <div class="col-2">
                     </div>
@@ -42,67 +42,41 @@
                     </div>
                     <div class="col-3">
                     </div>
-                </div>    
+                </div>
                 <div class="row mb-6">
                     <div class="col-lg-12 directions text-center">
                     </div>
                 </div>
-                <!-- Results Row -->
+                <!--=============== Results Row ==================-->
                 <div class="row text-left">
-                    <div class="col-lg-4">
+                    <div class="col-lg-8">
                         <h4 id="question"></h4>
                         <div class="choices" id="choice0" data-answer="0"></div>
                         <div class="choices" id="choice1" data-answer="1"></div>
                         <div class="choices" id="choice2" data-answer="2"></div>
                         <div class="choices" id="choice3" data-answer="3"></div>
-                    </div>
-                </div>
-                <div class="row mx-auto pt-5">
-                    <div class="col mx-auto">
-                        <button class='btns'>Start &raquo;</button>
+                        <div class="row mx-auto">
+                            <div class="col mx-auto">
+                                <button class='btns'>Start &raquo;</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        
                     </div>
                     <div class="col-4 text-right">
                         <h1 id="time"></h1>
+                        <button id="btnR">Reset &raquo;</button>
                     </div>
                     <div class="col-4">
-
                     </div>
                 </div>
             </div>
-
-
-<!-- 
-            <div class="row">
-                <div class="col">
-                    <div class="ml-5 pt-5">
-                        <h4 id="question"></h4>
-                    </div>
-                </div>
-            </div>  
-            <div class="row"> 
-                <div class="col-4">
-                        <div class="choices" id="choice0" data-answer="0"></div>
-                        <div class="choices" id="choice1" data-answer="1"></div>
-                        <div class="choices" id="choice2" data-answer="2"></div>
-                        <div class="choices" id="choice3" data-answer="3"></div>      
-                </div>
-            </div> -->
-            <!-- <div class="row mx-auto">
-                <div class="col mx-auto">
-                   <button class='btns'>Start &raquo;</button>
-                </div>
-            </div> -->
         </div>
         </div>
         </div>
-
         <!--================= Social Media Icons =======================-->
-
         <div class="social-icons">
             <ul class="list-unstyled text-center mb-0">
                 <li class="list-unstyled-item">
@@ -137,15 +111,9 @@
                 </li>
             </ul>
         </div>
-
-
         </div>
-        <!-- Bootstrap core JavaScript -->
-        <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-        <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="assets/javascript/javascript.js"></script>
-
     </body>
 
 </html>

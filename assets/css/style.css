@@ -1,32 +1,8 @@
-/*!
- * Start Bootstrap - Coming Soon v5.0.4 (https://startbootstrap.com/template-overviews/coming-soon)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
- */
-
 html {
     height: 100%;
 }
 
-/* html {
-    box-sizing: border-box;
-} */
-
-/* body {
-    background: linear-gradient(to top, #050f198a, #17a75e81), url(../images/purple.jpeg) fixed center center;
-    background-size: cover;
-    padding-top: 56px;
-    color: #80f6ba81; 
-    background-attachment: scroll;
-    text-shadow: 0px 3px 0px #a48fb2, 0px 14px 10px rgb(0, 0, 0), 0px 24px 2px rgba(0, 0, 0, 0.13), 0px 34px 30px rgb(0, 0, 0);
-} */
-
 body {
-    /* height: 100%;
-    min-height: 35rem;
-    position: relative;
-    font-family: 'Source Sans Pro';
-    font-weight: 300; */
     background: linear-gradient(to right, #4458dcda 0%, #844feee7 100%), url(../images/bubble-png-hd-bubbles-png-clipart-1280.png) no-repeat center center fixed;
     color: rgb(255, 255, 255);
     font-family: 'Rubik', sans-serif;
@@ -41,7 +17,8 @@ h1, #time {
 }
 
 p {
-    text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+    font-size: 20px;
+    text-shadow: 0px 3px 0px #242525, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
 }
 
 .choices {
@@ -101,9 +78,26 @@ p {
 
 #time {
     margin-right: 50px;
+    font-size: 70px;
 }
 
 /***** Button *******/
+
+#btnR {
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    text-shadow: 0px 3px 0px #b3c7c7, 0px 14px 10px rgba(240, 239, 239, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+}
 
 .btns {
     display: inline-block;
@@ -119,6 +113,12 @@ p {
     cursor: pointer;
     margin: 5px;
     text-shadow: 0px 3px 0px #b3c7c7, 0px 14px 10px rgba(240, 239, 239, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+}
+
+#btnR:hover {
+    padding-right: 60px;
+    transition: 0.5s;
+    background-color: rgba(204, 243, 177, 0.938);
 }
 
 .btns:hover {
@@ -138,17 +138,6 @@ a:hover {
     display: block;
     -webkit-font-smoothing: antialiased;
 }
-
-/* .home_banner_area {
-    z-index: 1;
-    background: url(../img/banner/home-banner.png) no-repeat top center;
-    background-position: center;
-    background-size: cover;
-}
-
-.home_banner_area .banner_inner {
-    width: 100%;
-} */
 
 /*   <====================== Social MediaIcons =====================>>   */
 
