@@ -90,35 +90,71 @@ var allQuestions = [{
 ];
 
 var currentQuestion = 0;
+
+var countDown = 15;
+console.log(countDown);
+
+var intervalId;
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function demo() {
     console.log('Taking a break...');
+   
     await sleep(3000);
     console.log('Two seconds later');
+    $("#time").text("");
     nextQuestion();
 }
 
 
 $(document).ready(function () {
     $(".btns").on("click", function () {
-       
-       
-       
-       
-       
-       
+
+
+
+
+
+
         console.log("Working!")
         gameStarts();
-    
-    
-    
+
+
+
     });
 });
 
+function decrement() {
+    $("#time").text(countDown);
+    countDown--;
+
+    if (countDown < 0) {
+        userChoice(-1);
+        countDown = 15;
+    }    
+}
+
+function setTime() {
+    countDown = 15;
+    intervalId = setInterval(decrement, 1000);
+}
+
+// setInterval(function(){
+//     countDown--;
+// },1000);
+
+// function setTime() {
+//     setTimeout(function () {
+//         userChoice(-1);
+        
+//     }, 3000);
+// }
+
+
 function gameStarts() {
+    setTime();
     $("#question").text(allQuestions[0].question);
     $(".btns").hide();
     renderChoices();
@@ -128,42 +164,40 @@ function renderChoices() {
     let count = 0;
     allQuestions[currentQuestion].choices.forEach(function (element) {
         console.log(element);
-        $("#choice" + count).text(`\u21D2 ${element}`); 
-       count++;
+        $("#choice" + count).text(`\u21D2 ${element}`);
+        count++;
     });
 
 }
 
 function userChoice(userPicked) {
     clearChoices();
-
+    clearInterval(intervalId);
     console.log("testing user" + userPicked);
     console.log("testing machine" + allQuestions[currentQuestion].correctAnswer);
     allQuestions[currentQuestion].correctAnswer
-    if (parseInt(userPicked) === allQuestions[currentQuestion].correctAnswer) {   
-    console.log("works!")
-        $("#question").text(`Yup! you got it right. `);
+    if (parseInt(userPicked) === allQuestions[currentQuestion].correctAnswer) {
+        console.log("works!")
+        $("#question").html(`<h2>Yup! you got it right. </h2>`);
     } else {
         $("#question").text(`Nope! the correct answer is: ` + allQuestions[currentQuestion].choices[allQuestions[currentQuestion].correctAnswer]);
     }
-    if (currentQuestion < allQuestions.length) {
-        currentQuestion ++;
-    } else { gameEnds();
-
-    }
-    demo();
     
+    demo();
+
 }
 
 $(".choices").on("click", function () {
     let userPicked = $(this).attr("data-answer");
     console.log(userPicked);
-    userChoice(userPicked); 
-    
+    userChoice(userPicked);
+
 });
 
 function clearChoices() {
     $(".choices").text("");
+    
+
 }
 
 function gameEnds() {
@@ -171,6 +205,13 @@ function gameEnds() {
 }
 
 function nextQuestion() {
+    if (currentQuestion < allQuestions.length) {
+        currentQuestion++;
+    } else {
+        gameEnds();
+
+    }
+    setTime();
     $("#question").text(allQuestions[currentQuestion].question);
     renderChoices();
 }
@@ -179,15 +220,15 @@ function nextQuestion() {
 
 
 
-$(document).scroll(function() {
-  navbarScroll();
+$(document).scroll(function () {
+    navbarScroll();
 });
 
 function navbarScroll() {
-  var y = window.scrollY;
-  if (y > 10) {
-    $('.header').addClass('small');
-  } else if (y < 10) {
-    $('.header').removeClass('small');
-  }
+    var y = window.scrollY;
+    if (y > 10) {
+        $('.header').addClass('small');
+    } else if (y < 10) {
+        $('.header').removeClass('small');
+    }
 }
