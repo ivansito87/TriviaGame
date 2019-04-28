@@ -103,7 +103,7 @@ async function demo() {
 
 
 $(document).ready(function () {
-    $("#startBtn").on("click", function () {
+    $(".btns").on("click", function () {
        
        
        
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
 function gameStarts() {
     $("#question").text(allQuestions[0].question);
-    $("#startBtn").hide();
+    $(".btns").hide();
     renderChoices();
 }
 
@@ -128,7 +128,7 @@ function renderChoices() {
     let count = 0;
     allQuestions[currentQuestion].choices.forEach(function (element) {
         console.log(element);
-        $("#choice" + count).text(element); 
+        $("#choice" + count).text(`\u21D2 ${element}`); 
        count++;
     });
 
@@ -173,4 +173,21 @@ function gameEnds() {
 function nextQuestion() {
     $("#question").text(allQuestions[currentQuestion].question);
     renderChoices();
+}
+
+
+
+
+
+$(document).scroll(function() {
+  navbarScroll();
+});
+
+function navbarScroll() {
+  var y = window.scrollY;
+  if (y > 10) {
+    $('.header').addClass('small');
+  } else if (y < 10) {
+    $('.header').removeClass('small');
+  }
 }
