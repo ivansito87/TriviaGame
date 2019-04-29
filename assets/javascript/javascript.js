@@ -186,12 +186,12 @@ $(document).ready(function () {
             console.log("works!")
             rightQuestions++;
             right.play();
-            $("#choice1").html('<img src ="assets/images/correct.png" width = "400px">');
+            $("#choice0").html('<img src ="assets/images/correct.png" width ="200px" heigth="200px" class="img-fluid">');
             $("#question").html(`<h2>Yup! you got it right. </h2>`);
         } else {
             wrongQuestions++;
             wrong.play()
-            $("#choice1").html('<img src ="assets/images/wrong.png" width = "400px">');
+            $("#choice0").html('<img src ="assets/images/wrong.png" width ="200px" heigth="200px" class="img-fluid">');
             $("#question").text(`Nope! the correct answer is: ` + allQuestions[currentQuestion].choices[allQuestions[currentQuestion].correctAnswer]);
         }
         demo();
@@ -246,3 +246,8 @@ $(document).ready(function () {
     }
 
 });
+
+
+
+
+////==========================================> Mouse Trail
