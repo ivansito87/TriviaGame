@@ -122,8 +122,6 @@ p {
     background-color: rgba(204, 243, 177, 0.938);
 }
 
-
-
 .btns:hover {
     padding-right: 60px;
     transition: 0.5s;
@@ -248,4 +246,34 @@ a:hover {
     }
 }
 
-/************* Mouse Trail   *****(*****88*******)******/
+#vertical {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+    position: fixed;
+    bottom: 24px;
+    right: 115px;
+}
+
+/*************** Mouse Trail *******************/
+
+.ball {
+    padding: 1px;
+    margin: 3px;
+    pointer-events: none;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background: white;
+    animation: implode 1.5s cubic-bezier(0.17, 0.58, 0.6, 0.43);
+    animation-fill-mode: backwards;
+    opacity: 1;
+}
+
+@keyframes implode {
+    100% {
+        transform: scale(0)
+    }
+}
